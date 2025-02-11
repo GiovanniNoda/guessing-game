@@ -35,5 +35,24 @@ export const GlobalStyle = createGlobalStyle`
     button:hover {
         filter: brightness(0.9);
     }
+
+    main {
+        width: 556px;
+        background-color: ${props => props.theme['white']};
+        padding: 2rem;
+        padding-top: 4.5rem;
+        border-radius: 0.75rem;
+    }
+
+    main .word {
+        width: 100%;
+
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 1rem;
+
+        margin: 2.5rem 0;
+    }
     `
 
