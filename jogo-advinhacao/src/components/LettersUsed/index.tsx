@@ -1,15 +1,27 @@
 import { LettersUsedContainer } from "./styles"
 import { Letter } from "../Letter"
 
-export function LettersUsed() {
+export type LetterUsedProps = {
+    value: string
+    correct: boolean
+}
+
+type Props = {
+    data: LetterUsedProps[]
+}
+
+export function LettersUsed({ data }: Props) {
     return(
         <LettersUsedContainer>
             <h5>Letras utilizadas</h5>
 
             <div>
-                <Letter value="r" size="small" color="correct" />
+                {
+                    data.map(({ value, correct }) => (
+                        <Letter key={value} value={value} size="small" color={correct ? "correct" : "wrong"} />
+                    ))
+                }
                 
-                <Letter value="x" size="small" color="wrong" />
             </div>
         </LettersUsedContainer>
     )
